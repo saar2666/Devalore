@@ -3,6 +3,7 @@ import pytest
 import requests
 import json
 
+
 @pytest.mark.prod
 def testProd():
     currency_names = []
