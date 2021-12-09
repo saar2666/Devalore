@@ -1,12 +1,19 @@
-import secrets
+#prod
 import requests
 import json
 
-parsed = json.load(open("secrets.json", "r"))
-currency_names = []
-response = requests.get('http://api.exchangeratesapi.io/v1/latest?access_key='+parsed["API_KEY"]).json()
-dic = response["rates"]
-for k,v in dic.items():
-    if v<10:
-        currency_names.append(k)
-print(currency_names)
+def exchangeProd():
+    url = 'http://api.exchangeratesapi.io/v1/latest?access_key=36d4d7b23910dc84442f4bc147637fab'
+    response = requests.get(url).json()
+    dic = response["rates"]
+    d = dict((k, v) for k, v in dic.items() if v <= 10)
+
+    return(d)
+
+print(exchangeProd())
+
+
+
+#dev
+
+#def exchangeDev():
