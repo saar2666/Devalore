@@ -11,7 +11,7 @@ def prodExchenage():
             currency_names.append(k)
     return(currency_names)
 
-print(prodExchenage())
+#print(prodExchenage())
 
 
 
@@ -24,4 +24,4 @@ def devExchange():
             currency_names.append(k)
     return(currency_names)
 
-print(devExchange())
+#print(devExchange())
