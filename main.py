@@ -12,13 +12,14 @@ def prodExchenage():
     return (currency_names)
 
 
-print(prodExchenage()) #just for self testing
+#print(prodExchenage()) #just for self testing
 
 
 def devExchange():
-    parsed = json.load(open("moc_data.json", "r")) #load the json file with the mock data we created earlier using the function below
     currency_names = []
-    for k, v in parsed.items():
+    parsed = json.load(open("moc_data.json", "r")) #load the json file with the mock data we created earlier using the function below
+    dic = parsed["rates"]
+    for k, v in dic.items():
         if v < 10:
             currency_names.append(k)
     return (currency_names)
