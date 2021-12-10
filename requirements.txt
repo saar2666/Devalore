@@ -1,2 +1,1 @@
-sudo easy_install pip
-pip install requests
+Sa2017!
