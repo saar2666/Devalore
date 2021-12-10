@@ -27,6 +27,7 @@ print(devExchange())  #just for self testing
 
 
 
+'''
 
 currency_names = []
 response = requests.get('http://api.exchangeratesapi.io/v1/latest?access_key=36d4d7b23910dc84442f4bc147637fab').json()
@@ -40,3 +41,4 @@ json_string = json.dumps(response, indent=3)
 with open('moc_data.json', 'w') as outfile: #create json file name mock_data.json , write permissions
     outfile.write(json_string) #using dump to convert object into string
 
+'''
