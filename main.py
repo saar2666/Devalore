@@ -27,16 +27,16 @@ print(devExchange())  #just for self testing
 
 
 
-'''
-    currency_names = []
-    response = requests.get('http://api.exchangeratesapi.io/v1/latest?access_key=36d4d7b23910dc84442f4bc147637fab').json()
-    dic = response["rates"]
-    for k,v in dic.items():
-        if v<10:
-            currency_names.append(k)
-    print(currency_names)
-    
-    with open('moc_data.json', 'w') as outfile: #create json file name mock_data.json , write permissions
-        json.dump(response["rates"], outfile) #using dump to convert object into string
- 
-'''
+
+currency_names = []
+response = requests.get('http://api.exchangeratesapi.io/v1/latest?access_key=36d4d7b23910dc84442f4bc147637fab').json()
+dic = response["rates"]
+for k,v in dic.items():
+    if v<10:
+        currency_names.append(k)
+print(currency_names)
+
+json_string = json.dumps(response, indent=3)
+with open('moc_data.json', 'w') as outfile: #create json file name mock_data.json , write permissions
+    outfile.write(json_string) #using dump to convert object into string
+
